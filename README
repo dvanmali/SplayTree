@@ -1,0 +1,45 @@
+CSIL login : dvanmali
+UCSB Email : dvanmali@umail.ucsb.edu
+
+Name  	   : Dylan Vanmali
+Perm	   : 7999691
+Class	   : CMPSC 130A Data Structures and Algorithms I
+Project	   : Programming Assignment 1
+Section	   : Friday 2-2:50
+
+Design:
+	My design implements the structure of a Hash Heap. Since hash utilizes behavior for insert, delete, and find in O(1) time, I thought the best way to implement this project was to first use the design of a hash table filled with heap objects. Since heap objects implement insert, delete, deleteMax, and find in O(logn), combining these structures would make the best timing for many random inputs.
+
+Running:
+	1) Compile using `make`
+	2) Run a test using syntax `./proj1 < sample.txt`
+	       2.1) Run my `script.sh` to run many tests files at once and check for it's runtime and printed output.
+	       2.2) Run the professor's `script_prof.sh` file to run all tests at once and compare for correctness.
+
+Other Commands:
+        1) make all	  : same as make
+	2) make turnin	  : allows me to submit to the turnin project server
+	3) make clean	  : removes all temporary files and the executable
+	4) script.sh	  : prints all test outputs and it's runtime
+	5) script_prof.sh : professor's provided shell script and compares my output to intended output 
+
+Timing:
+	1) Insert i:
+	   	  For many random inputs n and arbitrary hash size h, the average insert time is O(log(n)/h).
+	2) Lookup i:
+	   	  For many random inputs n and arbitrary hash size h, the average lookup time is O(log(n)/h).
+	3) DeleteMax:
+	   	  For many random inputs n and arbitrary hash size h, the average deleteMax time is O(h).
+	3) Delete i:
+	   	  For many random inputs n and arbitrary hash size h, the average delete time is O(log(n)/h).
+	4) Print:
+	   	  For many random inputs n and arbitrary hash size h, the average print time is O(hlogn).
+
+Attempted Extra Credits:
+	1) Arbitrary Size Set:
+	   	  Allows use of arbitrary hash size h as the first value of the input file. This value is then passed to the hashheap constructor which changes the hash table size.
+	2) Print decreasing:
+	   	  Without using the DeleteMax function, this print function concatenates then sorts these in order.
+
+Changes:
+	1) Lookup had an out of index boundary which caused many out-of-bound segmentation faults. Fixed by adding a short phrase asserting the index is less that the size.

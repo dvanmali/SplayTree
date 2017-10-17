@@ -1,0 +1,19 @@
+5
+insert 1
+print
+insert 1
+print
+insert 3
+print
+insert 5
+print
+insert 2
+print
+insert 6
+print
+insert 6
+print
+delete 1
+print
+delete 7
+print
